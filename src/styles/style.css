@@ -1,0 +1,25 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body { height: 100%; }
+
+.container {
+  display: flex;
+  max-width: 600rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.row {
+  display:block;
+}
+
+.space {
+  height: 5rem;
+  width: 6rem;
+}
