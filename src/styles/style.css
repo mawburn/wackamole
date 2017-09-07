@@ -7,7 +7,7 @@ html {
 
 html, body { height: 100%; }
 
-.container {
+#container {
   display: flex;
   max-width: 600rem;
   justify-content: center;
@@ -22,4 +22,8 @@ html, body { height: 100%; }
 .space {
   height: 5rem;
   width: 6rem;
+}
+
+.space:hover {
+  cursor: pointer; 
 }
