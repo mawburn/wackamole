@@ -13,17 +13,26 @@ html, body { height: 100%; }
   justify-content: center;
   align-items: center;
   height: 100%;
+  background-color: #8cd941;
 }
 
-.row {
+.col {
   display:block;
 }
 
 .space {
-  height: 5rem;
+  display: flex;
+  height: 6rem;
   width: 6rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
 }
 
 .space:hover {
   cursor: pointer; 
+}
+
+.preload {
+  display: none;
 }
