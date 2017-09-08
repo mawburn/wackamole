@@ -29,20 +29,6 @@ html, body {
   background-color: #8cd941;
 }
 
-@media screen and (max-width: 500px) {
-  #container {
-    padding: 0;
-    background-color: #8cd941;
-  }
-
-  #gameboard, 
-  #mode, 
-  .bottom {
-    width: 100%;
-    margin: 0;
-  }
-}
-
 #gameboard {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
@@ -68,6 +54,25 @@ html, body {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
+}
+
+@media screen and (max-width: 500px) {
+  #container {
+    padding: 0;
+    background-color: #8cd941;
+  }
+
+  #gameboard, 
+  #mode {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .space: {
+    width: 5rem;
+    height: 6rem; 
+  }
 }
 
 /* Not good for visual on accessibility, but makes clicking awful. Need to rely on sound. */
