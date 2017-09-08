@@ -8,7 +8,8 @@ html {
 }
 
 html, body { 
-  height: 100vh;
+  max-height: 100vh;
+  height: 100%;
   background-color: #18260b;
   color: rgba(0, 0, 0, 0.6);
 }
@@ -26,6 +27,20 @@ html, body {
   padding: 1rem; 
   margin: 0 auto;
   background-color: #8cd941;
+}
+
+@media screen and (max-width: 500px) {
+  #container {
+    padding: 0;
+    background-color: #8cd941;
+  }
+
+  #gameboard, 
+  #mode, 
+  .bottom {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .bottom {
@@ -50,6 +65,12 @@ html, body {
   background-position: center;
 }
 
+/* Not good for visual on accessibility, but makes clicking awful. Need to rely on sound. */
+.space:focus, 
+  .space:active {
+  outline: 0;
+}
+
 #gameboard:hover {
   cursor: pointer; 
 }
@@ -58,58 +79,17 @@ html, body {
   display: none;
 }
 
-#mode input {
-    position: absolute !important;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    width: 1px;
-    border: 0;
-    overflow: hidden;
-}
-
-#mode label {
-  float: left;
-}
-
-#mode label {
-  display: inline-block;
-  width: 25%;
-  background-color: #e4e4e4;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 14px;
-  font-weight: normal;
-  text-align: center;
-  text-shadow: none;
-  padding: 6px 14px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  transition: all 0.1s ease-in-out;
-}
-
-#mode button {
-  width: 25%;
-  padding: 6px 14px;
-}
-
-#mode label:hover {
-  cursor: pointer;
-}
-
-#mode input:checked + label {
-  color: rgba(255, 255, 255, 0.777);
-  background-color: #777;
-  box-shadow: none;
-}
-
-#mode label:first-of-type {
-  border-radius: 4px 0 0 4px;
+#mode {
+  padding: 1.25rem;
 }
 
 #mode button {
   font-family: 'Roboto', sans-serif;
   color: rgba(0, 0, 0, 0.6);
-  border-radius: 0 4px 4px 0;
   background: #f9ed00;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 5px 14px;
+  padding: 0.5rem 1rem;
+  width: 25%;
+  float: right;
 }
 

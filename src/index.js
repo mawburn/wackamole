@@ -21,8 +21,8 @@ preloadImages()
 // Game Loop
 const gameLoop = () => {
   const difficulty = document.querySelector('input[name="difficulty"]:checked').value
-  const moleLength = () => 1000 - (score.value * difficulty)
-  const newMoleTimer = () => 500 - (score.value * (difficulty/2))
+  const moleLength = () => 1000 - (score.get() * difficulty)
+  const newMoleTimer = () => 500 - (score.get() * (difficulty/2))
 
   return setInterval(() => {
     gameBoard.newMole(moleLength())  
@@ -53,7 +53,8 @@ gameButton.addEventListener('click', e => {
 
 //-- Register Smash
 gameBoardElm.addEventListener('click', e => {
-  if(gameActive) {
+  console.log(e.type, e.keyCode)
+  if(gameActive && e.type === 'click' || e.keyCode == 13) {
     const target = e.target
 
     if(target && target.classList.contains('space') && target.dataset.scorable === 'true') {

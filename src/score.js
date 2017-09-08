@@ -1,21 +1,28 @@
 class Score {
   constructor() {
     this.value = 0
-    document.getElementById('score').textContent = `${this.value}`
+    this.setScore()
   }
 
   clear() {
     this.value = 0
-    document.getElementById('score').textContent = `${this.value}`
+    this.setScore()
   }
 
   update() {
     ++this.value
-    document.getElementById('score').textContent = `${this.value}`
+    this.setScore()
   }
 
   get() {
     return this.value
+  }
+
+  setScore() {
+    const scoreElm = document.getElementById('score')
+
+    scoreElm.textContent = `${this.value}`
+    scoreElm.setAttribute('aria-label', `score: ${this.value}`)
   }
 }
 

@@ -4,7 +4,7 @@ export default class Spaces {
   constructor() {
     this.spaces = document.querySelectorAll('.space')
     this.spaces.forEach((img) => img.style.backgroundImage = `url(${hole})`)
-  }
+  } 
 
   hitMole(space) {
     space.dataset.scorable = 'hit'

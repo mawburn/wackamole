@@ -4,8 +4,9 @@
   "description": "Wack-a-mole game",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "prebuild": "rimraf public",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,6 @@
     "babel-preset-es2015": "^6.24.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
-    "eslint": "^4.6.1",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.30.1",
     "normalize.css": "^7.0.0",
