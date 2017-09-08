@@ -1,0 +1,95 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size:16px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body { 
+  max-height: 100vh;
+  height: 100%;
+  background-color: #18260b;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  padding-top: 2rem;
+}
+
+#gameboard, 
+  #mode, 
+  .bottom {
+  width: 24rem;
+  padding: 1rem; 
+  margin: 0 auto;
+  background-color: #8cd941;
+}
+
+@media screen and (max-width: 500px) {
+  #container {
+    padding: 0;
+    background-color: #8cd941;
+  }
+
+  #gameboard, 
+  #mode, 
+  .bottom {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.bottom {
+  font-weight: bolder;
+  color: rgba(0, 0, 0, 0.9);
+  padding-left: 3rem;
+  font-size: 1.25rem;
+  line-height: 1.777rem;
+}
+
+.row {
+  display: block;
+  text-align: center;
+}
+
+.space {
+  display: inline-block;
+  width: 7rem;
+  height: 9rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+/* Not good for visual on accessibility, but makes clicking awful. Need to rely on sound. */
+.space:focus, 
+  .space:active {
+  outline: 0;
+}
+
+#gameboard:hover {
+  cursor: pointer; 
+}
+
+.preload {
+  display: none;
+}
+
+#mode {
+  padding: 1.25rem;
+}
+
+#mode button {
+  font-family: 'Roboto', sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+  background: #f9ed00;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  width: 25%;
+  float: right;
+}
+

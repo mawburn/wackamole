@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <title>Wackamole</title>
+</head>
+<body>
+  <div id="container">
+    <div id="mode" role="radiogroup">
+      <input type="radio" id="easy" name="difficulty" class="difficulty" value="20" tabindex="0" />
+      <label for="easy" tabindex="-1" role="button">Easy</label>
+
+      <input type="radio" id="medium" name="difficulty" class="difficulty" value="50" checked tabindex="0"/>
+      <label for="medium" tabindex="-1">Med</label>
+
+      <input type="radio" id="hard" name="difficulty" class="difficulty" value="100" tabindex="0"/>
+      <label for="hard" tabindex="-1">Hard</label>
+
+      <button id="game">Start</button>
+    </div>
+    <div id="gameboard">
+      <div class="row">
+        <div class="space" aria-label="1" tabindex="0"></div>
+        <div class="space" aria-label="2" tabindex="0"></div>
+        <div class="space" aria-label="3" tabindex="0"></div>
+      </div>
+      <div class="row">
+        <div class="space" aria-label="4" tabindex="0"></div>
+        <div class="space" aria-label="5" tabindex="0"></div>
+        <div class="space" aria-label="6" tabindex="0"></div>
+      </div>
+      <div class="row">
+        <div class="space" aria-label="7" tabindex="0"></div>
+        <div class="space" aria-label="8" tabindex="0"></div>
+        <div class="space" aria-label="9" tabindex="0"></div>
+      </div>
+    </div>
+    <div class="bottom">Score: <span id="score" tabindex="0"></span></div>
+  </div>
+</body>
+</html>
