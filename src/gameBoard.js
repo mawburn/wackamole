@@ -18,6 +18,7 @@ export default class Spaces {
     setTimeout(() => {
       randSpace.style.backgroundImage = `url(${mole})`
       randSpace.dataset.scorable = 'true'
+      
       setTimeout(() => {
         this.removeMole(randSpace)
       }, moleTimer)
@@ -37,7 +38,7 @@ export default class Spaces {
     })
   }
 
-  getRandomSpace(nullSpaces = []) {
+  getRandomSpace(badSpaces = []) {
     const randSpace = Math.floor(Math.random() * 9)
     const spaceBg = this.getSpaceBackground(randSpace)
 
@@ -45,7 +46,8 @@ export default class Spaces {
       return this.spaces[randSpace]
     } 
 
-    return this.getRandomSpace(nullSpaces.push(randSpace))
+    const newBadSpaces = badSpaces.concat([randSpace])
+    return this.getRandomSpace(newBadSpaces)
   }
 
   getSpaceBackground(num) {

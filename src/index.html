@@ -8,20 +8,34 @@
 </head>
 <body>
   <div id="container">
-    <div class="col">
-      <div id="space-1" class="space"></div>
-      <div id="space-2" class="space"></div>
-      <div id="space-3" class="space"></div>
+    <div id="mode">
+      <input type="radio" id="easy" name="difficulty" class="difficulty" value="20" />
+      <label for="easy">Easy</label>
+
+      <input type="radio" id="medium" name="difficulty" class="difficulty" value="50" checked/>
+      <label for="medium">Medium</label>
+
+      <input type="radio" id="hard" name="difficulty" class="difficulty" value="100" />
+      <label for="hard">Hard</label>
+
+      <button id="game">Start</button>
     </div>
-    <div class="col">
-      <div id="space-4" class="space"></div>
-      <div id="space-5" class="space"></div>
-      <div id="space-6" class="space"></div>
-    </div>
-    <div class="col">
-      <div id="space-7" class="space"></div>
-      <div id="space-8" class="space"></div>
-      <div id="space-9" class="space"></div>
+    <div id="gameboard">
+      <div class="row">
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+      </div>
+      <div class="row">
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+      </div>
+      <div class="row">
+        <div class="space"></div>
+        <div class="space"></div>
+        <div class="space"></div>
+      </div>
     </div>
     <div class="bottom">Score: <span id="score"></span></div>
   </div>

@@ -3,16 +3,18 @@ class Score {
     this.value = 0
   }
 
+  clear() {
+    this.value = 0
+    this.update()
+  }
+
   update() {
+    ++this.value
     document.getElementById('score').textContent = `${this.value}`
   }
 
   get() {
     return this.value
-  }
-
-  add(x = 1) {
-    this.value += x
   }
 }
 
