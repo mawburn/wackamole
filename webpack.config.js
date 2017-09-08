@@ -17,11 +17,10 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.styl$/,
-        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]-[local]__[hash:base64:5]!stylus-loader',
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015']
+        }
       },
       {
         test: /\.css$/,
