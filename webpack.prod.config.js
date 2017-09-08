@@ -10,12 +10,12 @@ module.exports = {
   entry: './src',
   externals: '',
   output: {
-    path: path.join(__dirname, '/'),
-    publicPath: '/',
+    path: path.join(__dirname, '/public'),
+    publicPath: './public/',
     filename: 'bundle.[hash].js'
   },
   plugins: [
-    new HtmlWebpackPlugin({template: './src/index.html'}),
+    new HtmlWebpackPlugin({template: './src/index.html', 'filename': './index.html'}),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin()
   ],
