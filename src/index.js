@@ -3,7 +3,6 @@ import Score from './score'
 import preloadImages, {hole, transition, mole, hitMole, hitMoleTransition} from './images'
 
 import normalize from 'normalize.css'
-import toggleSwitch from './styles/switch.css'
 import css from './styles/style.css'
 
 // Initialize
@@ -18,7 +17,6 @@ const gameBoard = new GameBoard()
 const score = new Score()
 
 preloadImages()
-score.update()
 
 // Game Loop
 const gameLoop = () => {
@@ -32,33 +30,35 @@ const gameLoop = () => {
 }
 
 // Event Listeners
-gameBoardElm.addEventListener('click', e => {
-  const target = e.target
 
-  if(target && target.classList.contains('space') && target.dataset.scorable === 'true') {
-    score.update()
-    gameBoard.hitMole(target)
-  }
-})
-
-modeElm.addEventListener('click', e => {
-  if(e.target.type === 'radio') {
-    difficulty = e.target.value
-  }
-})
-
+//-- Start Game
 gameButton.addEventListener('click', e => {
   const buttonText = gameButton.textContent
 
   if(!gameActive) {
     gameButton.textContent = 'Stop'
+    gameButton.style.backgroundColor = '#e87b51'
+    gameButton.style.color = '#FFF'
     gameActive = gameLoop()
     score.clear()
   } else {
     gameButton.textContent = 'Start'
+    gameButton.removeAttribute('style')
     clearInterval(gameActive)
     gameActive = false
   }
 
   difficultyOpts.forEach(mode => mode.disabled = gameActive)
+})
+
+//-- Register Smash
+gameBoardElm.addEventListener('click', e => {
+  if(gameActive) {
+    const target = e.target
+
+    if(target && target.classList.contains('space') && target.dataset.scorable === 'true') {
+      score.update()
+      gameBoard.hitMole(target)
+    }
+  }
 })

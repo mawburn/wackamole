@@ -1,11 +1,12 @@
 class Score {
   constructor() {
     this.value = 0
+    document.getElementById('score').textContent = `${this.value}`
   }
 
   clear() {
     this.value = 0
-    this.update()
+    document.getElementById('score').textContent = `${this.value}`
   }
 
   update() {
