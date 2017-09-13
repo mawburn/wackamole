@@ -11,7 +11,7 @@ module.exports = {
   externals: '',
   output: {
     path: path.join(__dirname, '/public'),
-    publicPath: './public/',
+    publicPath: './',
     filename: 'bundle.[hash].js'
   },
   plugins: [
