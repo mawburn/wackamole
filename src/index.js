@@ -53,7 +53,6 @@ gameButton.addEventListener('click', e => {
 
 //-- Register Smash
 gameBoardElm.addEventListener('click', e => {
-  console.log(e.type, e.keyCode)
   if(gameActive && e.type === 'click' || e.keyCode == 13) {
     const target = e.target
 
